@@ -1,11 +1,12 @@
 const express = require("express");
-const cors = require("cors");
-
 const app = express();
 
 // parse requests of content-type - application/json
-app.use(cors());
 app.use(express.json());
+
+
+const cors = require('cors');
+app.use(cors());
 
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));

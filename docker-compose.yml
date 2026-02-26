@@ -1,8 +1,6 @@
-version: '3'
-
 services:
   backend:
-    build: ./backend
+    image: sasi777/mean-backend:latest
     container_name: backend
     ports:
       - "8080:8080"
@@ -12,7 +10,7 @@ services:
       - MONGO_URL=mongodb://mongo:27017/dd_db
 
   frontend:
-    build: ./frontend
+    image: sasi777/mean-frontend:latest
     container_name: frontend
 
   mongo:
@@ -20,7 +18,6 @@ services:
     container_name: mongo
     ports:
       - "27017:27017"
-    hostname: localhost
 
   nginx:
     image: nginx:alpine
@@ -32,4 +29,3 @@ services:
     depends_on:
       - frontend
       - backend
-    
